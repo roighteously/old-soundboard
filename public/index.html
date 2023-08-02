@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Soundboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body oncontextmenu="return false;"><div class="w">
+    <div class="sdiv" id="sounds">
+			<!--sounds at /sounds.json, wont load in source editor-->
+		</div>
+
+	<h1 style="text-align: center;" ><a href='/' style="color:black;">Soundboard v3</a></h1>
+	<p style="animation: css 0s 3s forwards; text-align: center;">Drag it to your bookmarks bar to bookmark this page!</p>
+	<p style="animation: css 0s 3s forwards; text-align: center;">Welcome back to Soundboard.</p>
+	
+	<div class="navbar">
+		
+		<a href="fullscreen.html">Fullscreen</a>
+		<a onclick="Susaudio.playPause()">Play/Pause All</a>
+			<a onclick="Susaudio.stopAll()">Stop All</a>
+	<a onclick="Susaudio.stopRecent()">Stop Recent Sound</a>
+		<a id="fa" onclick="Susaudio.stopAll(); Susaudio._player.queue = []; alert('Audios have been flushed/fixed.');">Fix Audios</a>
+			<input type="range" min="1" max="2" step="0.25" value="1" class="slider" id="myRange">
+	<a onclick="document.getElementById('myRange').value = 1; playPitch = 1;">Reset Pitch</a>
+	<a onclick="at = !at;">Random Pitch/Autotune</a><br><br>
+		<p style="color: white;">Current Pitch: <span id="pitch"></span></p>
+		<p style="color: white;">Audios Playing: <span id="audiop"></span></p>
+</div>
+	<br>
+	
+	
+		<script src="js/Susaudio.js"></script>
+    <script src="js/Soundboard.js"></script></div>
+</body>
+</html>
